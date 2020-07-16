@@ -1,0 +1,2 @@
+<v-like count="{{classic.fav_nums}}" like="{{classic.like_status}}"/>
+<v-movie img="{{classic.image}}" content="{{classic.content}}"/>
