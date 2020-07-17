@@ -1,4 +1,4 @@
-<view catchtap="onLike" class="container">
+<view bindtap="onLike" class="container">
 <image src="{{like?yeslikeImage:nolikeImage}}"></image>
 <text >{{count}}</text>
 </view>

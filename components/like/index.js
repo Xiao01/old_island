@@ -25,6 +25,7 @@ Component({
    */
   methods: {
     onLike:function(event){
+      
      let like = this.properties.like
      let count = this.properties.count
      count = like?count-1:count+1
@@ -32,6 +33,11 @@ Component({
        count:count,
        like:!like,
       })
+      // 点赞
+      let behavior = this.properties.like?"like":"cancel"
+      this.triggerEvent("like",{
+        behavior:behavior,
+      },{})
     }
   }
 })
