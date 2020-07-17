@@ -1,8 +1,2 @@
-{\rtf1\ansi\ansicpg936\cocoartf1671\cocoasubrtf500
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-
-\f0\fs24 \cf0 Read.me}
+本项目包含旧岛小程序的前端代码，数据可正常与后台系统进行交互，下载本项目源码到本地，用小程序开发工具打开，编译后运行，可以看到旧岛小程序的开发进度
+1.0版本提交的代码完成整体进度
