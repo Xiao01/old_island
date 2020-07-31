@@ -5,13 +5,17 @@ Component({
    */
   properties: {
     index:{
-      type:String,
-      observer:function(newVal,ordVal,changedPath){
-        let val = newVal < 10 ? '0' + newVal : newVal
-        this.setData({
-          _index:val
-        })
-      }
+      type:Number,
+      //个位数不够，补零 observer
+      // observer:function(newVal,ordVal,changedPath){
+      //   console.log(newVal)
+      //   console.log(ordVal)
+      //   console.log(changedPath)
+      //   let val = newVal < 10 ? '0' + newVal : newVal
+      //   this.setData({
+      //     _index:val
+      //   })
+      // }
     }
   },
 
@@ -23,8 +27,7 @@ Component({
       '一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月'
     ],
     year:2020,
-    month:"七月",
-    _index:""
+    month:"一月",
   },
   attached:function(){
     let date = new Date()

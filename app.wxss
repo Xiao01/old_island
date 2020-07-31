@@ -1,7 +1,7 @@
 /**app.wxss**/
 page{
   font-family: "PingFangSC-Thin";
-   font-size:36rpx; 
+  font-size:32rpx; 
    
 }
 

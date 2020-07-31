@@ -1,7 +1,19 @@
+<wxs module="tools">
+
+var bar = function (index) {
+  var val = index < 10 ? '0' + index :''+ index
+  return val;
+};
+
+module.exports = {
+  bar: bar
+};
+</wxs>
+
 <view class="container">
   <view class="index-container">
     <text class="plain">No.</text>
-    <text class="index">{{_index}}</text>
+    <text class="index">{{tools.bar(index)}}</text>
     <text class="vertical-line"></text>
     </view>
     <view class="date-container">

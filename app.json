@@ -1,14 +1,14 @@
 {
-  "pages":[
-    "pages/classic/classic"
+  "pages": [
+    "pages/classic/classic",
+    "pages/my/my"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "旧岛小程序",
+    "navigationBarTextStyle": "black"
   },
-  
   "sitemapLocation": "sitemap.json",
   "http": "util/http.js",
   "config": "config.js"

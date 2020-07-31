@@ -34,6 +34,7 @@ class HTTP{
         if(code.startsWith('2')){
           params.success && params.success(res.data)
         }else{
+          console.log(res )
           this._show_error(res.data.error_code)
         }
       },
