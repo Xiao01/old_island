@@ -16,6 +16,19 @@ class LikeModel extends HTTP{
         }
       })
     }
+
+ /*
+  * 按类别，ID获取期刊最新的点赞数和个人点赞状态
+  */
+ getLikeStatus(categray,id,sCallback){
+  this.request({
+    url:`classic/${categray}/${id}/favor`,
+    success:(res)=>{
+      sCallback(res)
+    }
+  })
+ }
+
 }
 
 export {LikeModel}

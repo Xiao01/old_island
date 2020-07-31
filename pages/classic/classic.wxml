@@ -1,7 +1,7 @@
 <view class="container" >
 <view class="header">
 <v-epsoide class="epsoide" index="{{classic.index}}" />
-<v-like class="like" bind:like="onLike" like="{{classic.like_status}}" count="{{classic.fav_nums}}" />
+<v-like class="like" bind:like="onLike" like="{{likeStauts}}" count="{{likeCount}}" />
 </view>
 <v-movie wx:if="{{classic.type==100}}" img="{{classic.image}}" content="{{classic.content}}" />
 <v-music wx:if="{{classic.type==200}}" img="{{classic.image}}" content="{{classic.content}}" />

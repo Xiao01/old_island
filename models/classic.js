@@ -26,7 +26,7 @@ class ClassicModel extends HTTP{
       sCallback(classic)
     }else{
       this.request({
-        url:"classic/" +index+'/'+previousOrNext,
+        url:`classic/${index}/${previousOrNext}`,
         success:(res)=>{
           sCallback(res)
           wx.setStorageSync(this._getKey(res.index),res)
@@ -34,18 +34,7 @@ class ClassicModel extends HTTP{
       })
     }
   }
-  /*
-  * 按类别，ID获取期刊详情
-  */
- getClassicDetal(categray,id,sCallback){
-  this.request({
-    url:"classic/" +categray+'/'+id,
-    success:(res)=>{
-      sCallback(res)
-      wx.setStorageSync(this._getKey(res.index),res)
-    }
-  })
- }
+ 
 
   isFirst(index){
     return index==1?true:false
