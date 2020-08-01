@@ -1,10 +1,10 @@
 <view class="container" >
 <view class="header">
-<v-epsoide class="epsoide" index="{{classic.index}}" />
+<v-episode class="episode" index="{{classic.index}}" />
 <v-like class="like" bind:like="onLike" like="{{likeStauts}}" count="{{likeCount}}" />
 </view>
-<v-movie wx:if="{{classic.type==100}}" img="{{classic.image}}" content="{{classic.content}}" />
-<v-music wx:if="{{classic.type==200}}" img="{{classic.image}}" content="{{classic.content}}" />
-<v-essay wx:if="{{classic.type==300}}" img="{{classic.image}}" content="{{classic.content}}" />
+<v-movie wx:if="{{classic.type==100}}"  img="{{classic.image}}" content="{{classic.content}}" />
+<v-music wx:if="{{classic.type==200}}"  img="{{classic.image}}" content="{{classic.content}}" title="{{classic.title}}" src="{{classic.url}}" bind:play="onPlay"/>
+<v-essay wx:if="{{classic.type==300}}"  img="{{classic.image}}" content="{{classic.content}}" />
 <v-navi  class="navi" bind:left="onNext"  bind:right="onPrevious"  first="{{first}}" latest="{{latest}}"    title="{{classic.title}}"/>
 </view>

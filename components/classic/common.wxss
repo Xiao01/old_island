@@ -5,16 +5,8 @@
 }
 
 .classic-img{
-  width:422rpx;
-  height:422rpx;
-  margin-top: 60rpx;
-  border-radius: 50%;
-}
-.player-img{
-  width: 120rpx;
-  height: 120rpx;
-  position: relative;
-  bottom: 270rpx;
+  width:750rpx;
+  height:500rpx;
 }
 
 .tag{

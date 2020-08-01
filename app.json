@@ -3,6 +3,7 @@
     "pages/classic/classic",
     "pages/my/my"
   ],
+  "requiredBackgroundModes": ["audio", "location"],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ffffff",

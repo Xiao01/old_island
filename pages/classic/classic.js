@@ -27,13 +27,19 @@ Page({
           likeStauts:res.like_status,
           likeCount:res.fav_nums
        })
-     })
+    })
   },
 
 onLike:function(event){
   let behavior = event.detail.behavior
   likeModel.like(behavior,this.data.classic.id,this.data.classic.type)
 },
+onPlay:function(event){
+  // let behavior = event.detail.behavior
+  // console.log(behavior)
+  // likeModel.like(behavior,this.data.classic.id,this.data.classic.type)
+},
+
 //向右，往前翻一期
 onPrevious:function(event){
   this._updateClassic("previous")
@@ -42,7 +48,6 @@ onPrevious:function(event){
 onNext:function(event){
   this._updateClassic("next")
 },
-
 
   _updateClassic:function(previousOrNext){
     let index = this.data.classic.index
@@ -54,7 +59,7 @@ onNext:function(event){
         first:classicModel.isFirst(res.index),
         latest:classicModel.isLatest(res.index),
       })
-   })
+    })
   },
 
   _getLikeStatus:function(category,artID){

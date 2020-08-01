@@ -1,4 +1,3 @@
-
 <view class="classic-container" >
   <image class="classic-img" src="{{img}}"></image>
   <image class="tag" src="{{pic}}"></image>
