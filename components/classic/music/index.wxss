@@ -18,14 +18,31 @@
 }
 
 .tag{
-  width:46rpx;
-  height:142rpx;
+  width:44rpx;
+  height:128rpx;
   position: relative;
   right:310rpx;
-  bottom:58rpx;
+  bottom:160rpx;
 }
 
 .content{
   font-size: 36rpx;
   max-width:550rpx;
+}
+
+.rotation{
+  -webkit-transform: rotate(360deg);
+  animation: rotation 12s linear infinite;
+  -moz-animation: rotation 12s linear infinite;
+  -webkit-animation: rotation 12s linear infinite;
+  -o-animation: rotation 12s linear infinite;
+}
+
+@-webkit-keyframes rotation{
+  from{
+    -webkit-transform: rotate(0deg);
+  }
+  to{
+    -webkit-transform: rotate(360deg);
+  }
 }
