@@ -1,5 +1,6 @@
 # 旧岛小程序说明文档
-https://user-images.githubusercontent.com/38653501/89127821-5d0e2080-d523-11ea-8218-fc3ce0a196fe.png
+
+![avatar](https://user-images.githubusercontent.com/38653501/89127821-5d0e2080-d523-11ea-8218-fc3ce0a196fe.png)
 
 
 ![avatar][base64str]
