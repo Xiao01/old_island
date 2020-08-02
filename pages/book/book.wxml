@@ -1,2 +1,6 @@
-<!--pages/book/book.wxml-->
-<text>pages/book/book.wxml</text>
+<block wx:for="{{books}}" wx:key="item">
+<image src='{{item.image}}'></image>
+<text>{{item.title}}</text>
+<text>{{item.author}}</text>
+<text>喜欢人数{{item.fav_nums}}</text>
+</block>

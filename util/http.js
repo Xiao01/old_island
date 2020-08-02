@@ -8,6 +8,7 @@ const tips = {
   1004:'禁止访问',
   1005:'不正确的开发key',
   1006:'服务器内部错误',
+  1007:'请检查url是否正确,无法访问服务器',
   2000:'你已经点过赞了',
   2001:'你还没点过赞',
   3000:'该期内容不存在'
@@ -39,7 +40,8 @@ class HTTP{
         }
       },
       fail:(err)=>{
-        this._show_error(1)
+        // this._show_error(1)
+        params.success(this._getJsonData())
       }
     })
   }
@@ -47,11 +49,16 @@ class HTTP{
     if(!error_code){
       error_code =1
     }
+    const tip = tips[error_code]
     wx.showToast({
-      title: tips[error_code],
+      title: tip?tip:tips[1],
       icon:'none',
       duration:2000
     })
+  }
+  _getJsonData(){
+    var localDatat = require("localData.js")
+    return localDatat.classicLatest
   }
 }
 

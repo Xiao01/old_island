@@ -66,10 +66,10 @@
 			"current": -1,
 			"list": [
 				{
-					"id": -1,
-					"name": "pages/classic/classic",
-					"pathName": "pages/classic/classic",
-					"query": "classic.type=200&classic.index=7",
+					"id": 0,
+					"name": "pages/book/book",
+					"pathName": "pages/book/book",
+					"query": "",
 					"scene": null
 				}
 			]
