@@ -1,6 +1,6 @@
 # 旧岛小程序说明文档
 
-![avatar](https://user-images.githubusercontent.com/38653501/89127821-5d0e2080-d523-11ea-8218-fc3ce0a196fe.png)
+![avatar](https://user-images.githubusercontent.com/38653501/89128213-95632e00-d526-11ea-944e-bb05ce02fd2e.png)
 扫码体验旧岛小程序
 
 
