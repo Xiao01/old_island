@@ -2,36 +2,55 @@ import{
   BookModel
 }from '../../models/book.js'
 const bookModel = new BookModel()
-
-
-
-// pages/book/book.js
-
-
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    books:[]
+    id:0,
+    comments:[],
+    book:null,
+    likeStatus:false,
+    likeCount:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const hotList = bookModel.getHotList()
-    hotList.then( res=>{
-      console.log("books")
+    console.log(options.id)
+    if(options.id){
       this.setData({
-        books:res
+        id:options.id
       })
-      console.log(this.data.books)
-     
+    }
+    bookModel.getDetail(this.data.id).then(res=>{
+      console.log("getDetail")
+      if(res){
+        this.setData({
+          book:res
+        })
+      }
     })
-
-    
+    bookModel.getLikeStatus(this.data.id).then(res=>{
+      console.log("getLikeStatus")
+      if(res){
+        this.setData({
+          likeStatus:res.like_status,
+          likeCount:res.fav_nums
+        })
+      }
+    })
+    bookModel.getShortComment(this.data.id).then( res=>{
+      
+      if(res){
+        this.setData({
+          comments:res.comments,
+        })
+      }
+      console.log(this.data.comments)
+    })
   },
 
   /**

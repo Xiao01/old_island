@@ -29,7 +29,7 @@ class HTTP{
         'appkey':config.appkey
       },
       success:(res)=>{
-        console.log("http-package.js 33")
+       
         console.log(res)
         //startsWith
         //endsWith
@@ -37,7 +37,6 @@ class HTTP{
         if(code.startsWith('2')){
           resolve(res.data)
         }else{
-          console.log(res )
           resolve(this._getJsonData())
           // reject()
           // this._show_error(res.data.error_code)
