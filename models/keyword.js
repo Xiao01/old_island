@@ -15,23 +15,26 @@ class KeywordModel extends HTTP {
   }
   getHistory() {
     const words = wx.getStorageSync(this.key)
-    if(!words){
+    if (!words) {
       return []
     }
     return words
   }
   //添加关键字先去重
   addKeyWordToHistory(keyword) {
-    let words = this.getHistory()
-    const has = words.includes(keyword)
-    if (!has){
-      if(words.length>=this.maxLength){  
-        words.pop()
+    if (keyword) {
+      let words = this.getHistory()
+      const has = words.includes(keyword)
+      if (!has) {
+        if (words.length >= this.maxLength) {
+          words.pop()
+        }
+        words.unshift(keyword)
+        wx.setStorageSync(this.key, words)
       }
-      words.unshift(keyword)
-      wx.setStorageSync(this.key, words)
     }
   }
-
 }
-export{KeywordModel}
+export {
+  KeywordModel
+}

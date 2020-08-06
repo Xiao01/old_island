@@ -8,7 +8,8 @@ Component({
   },
   externalClasses:['tag-class'],
   properties: {
-    comment:Object
+    comment:Object,
+    text:String
   },
 
   /**
@@ -28,5 +29,13 @@ Component({
         content:content,
        },{})
     },
+    onSearch:function(event){
+      // 搜索
+      let content = this.properties.text
+      this.triggerEvent("searching", {
+        searching: false,
+        input: content
+      }, {})
+   },
   }
 })

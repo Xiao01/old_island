@@ -1,4 +1,5 @@
-<view bind:tap="onTap" class="container tag-class"  >
-  <text>{{comment.content||comment}}</text>
+<view  class="container tag-class"  >
+  <text bind:tap="onTap" >{{comment.content}}</text>
+  <text bind:tap="onSearch">{{text}}</text>
   <slot name="after"></slot>
 </view>

@@ -1,76 +1,56 @@
-// components/search/index.js
-import {
-  KeywordModel
-} from '../../models/keyword.js'
-const keyword = new KeywordModel();
-
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-
+    hot: Array,
+    history: Array,
   },
   /**
    * 组件的初始数据
    */
   data: {
-    history: [],
-    hot:[],
-    input:'',
-    focus:true
+    input: '',
+    focus: true
   },
   attached: function () {
     this.setData({
-      input:""
-    })
-    console.log("attached")
-    this._getHistory()
-    keyword.getHot().then(res=>{
-      if (res) {
-        this.setData({
-          hot: res.hot
-        })
-      }
+      input: "",
+      focus: true
     })
   },
-  
+
   /**
    * 组件的方法列表
    */
   methods: {
     onCancel(event) {
       this.setData({
-        input:""
+        input: ""
       })
       this.triggerEvent("cancel", {
         searching: false,
       }, {})
     },
-    // onCancel(event) {
-    //   this.triggerEvent("cancel", {
-    //     searching: false,
-    //   }, {})
-    // },
     onConfirm(event) {
+      console.log("onConfirm:" + event.detail.value)
       const word = event.detail.value
       if (!word)
         return
-      keyword.addKeyWordToHistory(word)
-      // this._getHistory()
-      this.setData({
-        input:"",
-        focus:true
-      })
-     
+      this.triggerEvent("search", {
+        searching: false,
+        input: word
+      }, {})
     },
-    _getHistory:function(){
-      const words = keyword.getHistory()
-      if (words) {
-        this.setData({
-          history: words
-        })
-      }
+    onSearch(event) {
+      console.log("onConfirm:" + event.detail.input)
+      const word = event.detail.input
+      if (!word)
+        return
+      this.triggerEvent("search", {
+        searching: false,
+        input: word
+      }, {})
     },
   }
 })

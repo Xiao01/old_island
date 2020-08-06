@@ -1,63 +1,34 @@
-import {
+import{
   BookModel
-} from '../../models/book.js'
+}from '../../models/book.js'
 const bookModel = new BookModel()
-import {
-  KeywordModel
-} from '../../models/keyword.js'
+import{KeywordModel}from '../../models/keyword.js'
 const keywordModel = new KeywordModel()
-
-// pages/book/book.js
-
-
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    books: [],
-    searching: false,
-    hot: [],
-    history: [],
-  },
-
-  
-  onSearch(event) {
-    console.log("onSearch" )
-    if (event.detail.input) {
-      console.log("q:" + event.detail.input)
-      wx.navigateTo({
-        url: "/pages/search-result/search-result?q=" + event.detail.input,
-      })
-    }
-    this.setData({
-      searching: true,
-    })
-    keywordModel.getHot().then(res => {
-      this.setData({
-        hot: res.hot,
-        history: keywordModel.getHistory()
-      })
-    })
-
-  },
-  onCancel(event) {
-    this.setData({
-      searching: event.detail.searching
-    })
+    books:[],
+    q:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const hotList = bookModel.getHotList()
-    hotList.then(res => {
+    wx.showLoading()
+    this.setData({
+      q:options.q
+    }) 
+    bookModel.getBookSearch(this.data.q).then(res=>{
       this.setData({
-        books: res,
-        searching: false,
+        books:res.books
       })
+      console.log(this.data.books)
+      keywordModel.addKeyWordToHistory(this.data.q)
+      wx.hideLoading()
     })
   },
 
