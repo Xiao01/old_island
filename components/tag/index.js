@@ -15,13 +15,18 @@ Component({
    * 组件的初始数据
    */
   data: {
-    
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-
+    onTap:function(event){
+       // 点赞
+       let content = this.properties.comment.content
+       this.triggerEvent("tapping",{
+        content:content,
+       },{})
+    },
   }
 })

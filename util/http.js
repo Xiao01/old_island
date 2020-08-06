@@ -29,8 +29,6 @@ class HTTP{
         'appkey':config.appkey
       },
       success:(res)=>{
-        //startsWith
-        //endsWith
         let code = res.statusCode.toString()
         if(code.startsWith('2')){
           params.success && params.success(res.data)

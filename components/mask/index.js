@@ -1,11 +1,10 @@
-// components/movie/index.js
+// components/mask/index.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    img:String,
-    content:String
+
   },
 
   /**

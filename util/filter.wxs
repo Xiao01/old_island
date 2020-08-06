@@ -1,0 +1,20 @@
+
+var format = function (str) {
+  if(!str){
+    return ''
+  }
+  var reg =  getRegExp('\\\\n','g')
+  var val = str.replace(reg,'\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')
+  return val;
+};
+var limit = function(array,length){
+  if (array && array.length>0){
+    return array.slice(0,length)
+  }
+  return 
+};
+module.exports = {
+  format: format,
+  limit:limit
+};
+

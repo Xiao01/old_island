@@ -24,6 +24,7 @@ class HTTP{
     wx.request({
       url: config.api_base_url+url,
       method:method,
+      data:data,
       header:{
         'content-type':'application/json',
         'appkey':config.appkey
@@ -37,15 +38,15 @@ class HTTP{
         if(code.startsWith('2')){
           resolve(res.data)
         }else{
-          resolve(this._getJsonData())
-          // reject()
-          // this._show_error(res.data.error_code)
+          // resolve(this._getJsonData())
+          reject()
+          this._show_error(res.data.error_code)
         }
       },
       fail:(err)=>{
-        resolve(this._getJsonData())
-        // reject()
-        // this._show_error(1)
+        // resolve(this._getJsonData())
+        reject()
+        this._show_error(1)
       }
     })
   }

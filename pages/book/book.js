@@ -14,7 +14,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-    books:[]
+    books:[],
+    searching:false
+  },
+
+
+  onSearch(event){
+    this.setData({
+      searching:true
+    })
+    if(!event.detail.vaule) 
+      return
+    bookModel.getBookSearch(event.detail.vaule).then(res=>{
+      console.log(res)
+    })
+  },
+  onCancel(event){
+    this.setData({
+      searching:event.detail.searching
+    })
   },
 
   /**
@@ -23,15 +41,10 @@ Page({
   onLoad: function (options) {
     const hotList = bookModel.getHotList()
     hotList.then( res=>{
-      console.log("books")
       this.setData({
         books:res
       })
-      console.log(this.data.books)
-     
     })
-
-    
   },
 
   /**
