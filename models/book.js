@@ -45,13 +45,13 @@ class BookModel extends HTTP{
     })
   }
 
-  search(q,start=0,count=20,summary=0){
+  search(q,start){
     return this.request({
       url:'book/search',
       data:{
         start:start,
-        count:count,
-        summary:summary,
+        count:20,
+        summary:1,
         q:q
       }
     })

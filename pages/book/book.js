@@ -20,41 +20,46 @@ Page({
     searching: false,
     hot: [],
     history: [],
-    more:[]
+    more: [],
+    total: 0,
+    q: '',
+    noResult: false,
+    loading:false,
+    loadingCenter:false,
   },
 
-  
+
   onSearch(event) {
-    console.log("onSearch" )
     if (event.detail.q) {
-      let q = event.detail.q
-      console.log("q:" + q)
-   
-      bookModel.search(q).then(res=>{
+      this.setData({
+        q: event.detail.q,
+        loadingCenter:true,
+        more: []
+      })
+      this._search(0)
+    } else {
+      this.setData({
+        searching: true,
+        more:[],
+        noResult:false,
+        loading:false,
+        loadingCenter:false,
+        total:0,
+        q: ""
+      })
+      keywordModel.getHot().then(res => {
         this.setData({
-          more:res.books,
-          loadingCenter:false
+          hot: res.hot,
+          history: keywordModel.getHistory()
         })
-        console.log(this.data.more)
-        keywordModel.addKeyWordToHistory(q)
       })
     }
-    this.setData({
-      searching: true,
-    })
-    keywordModel.getHot().then(res => {
-      this.setData({
-        hot: res.hot,
-        history: keywordModel.getHistory()
-      })
-    })
-
   },
-  
+
   onCancel(event) {
-    console.log(" book book.js onCancel ")
     this.setData({
-      searching: false
+      searching: false,
+      more: [],
     })
   },
   /**
@@ -65,7 +70,6 @@ Page({
     hotList.then(res => {
       this.setData({
         books: res,
-        searching: false,
       })
     })
   },
@@ -109,7 +113,12 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if (this.data.total > this.data.more.length) {
+      this.setData({
+        loadingCenter: true
+      })
+      this._search(this.data.more.length)
+    }
   },
 
   /**
@@ -117,5 +126,28 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  _search(start) {
+    bookModel.search(this.data.q, start).then(res => {
+        if (res.total > 0) {
+          this.setData({
+            more: this.data.more.concat(res.books),
+            total: res.total,
+            loadingCenter: false,
+            loading: false,
+            noResult: false,
+          })
+          keywordModel.addKeyWordToHistory(this.data.q)
+        } else {
+          this.setData({
+            more: [],
+            total: 0,
+            loadingCenter: false,
+            loading: false,
+            noResult: true
+          })
+        }
+      })
+    }
 })

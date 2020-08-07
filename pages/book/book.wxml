@@ -19,4 +19,4 @@
 </view>
 
 <v-search wx:if="{{searching}}"  bind:cancel="onCancel"  bind:search="onSearch"  hot="{{hot}}" history="{{history}}"
- more="{{more}}" loadingCenter="{{loadingCenter}}" />
+ more="{{more}}" loadingCenter="{{loadingCenter}}" loading="{{loading}}" noResult="{{noResult}}" />
