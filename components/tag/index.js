@@ -8,7 +8,7 @@ Component({
   },
   externalClasses:['tag-class'],
   properties: {
-    comment:Object,
+   
     text:String
   },
 
@@ -24,18 +24,9 @@ Component({
   methods: {
     onTap:function(event){
        // 点赞
-       let content = this.properties.comment.content
        this.triggerEvent("tapping",{
-        content:content,
+        text:this.properties.text,
        },{})
     },
-    onSearch:function(event){
-      // 搜索
-      let content = this.properties.text
-      this.triggerEvent("searching", {
-        searching: false,
-        input: content
-      }, {})
-   },
   }
 })

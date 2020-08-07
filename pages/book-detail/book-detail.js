@@ -32,7 +32,7 @@ Page({
     })
   },
   onComment(event){
-    let content = event.detail.content || event.detail.value
+    const content = event.detail.text || event.detail.value
     if(!content){
       return
     }

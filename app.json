@@ -3,13 +3,9 @@
     "pages/classic/classic",
     "pages/my/my",
     "pages/book/book",
-    "pages/book-detail/book-detail",
-    "pages/search-result/search-result"
+    "pages/book-detail/book-detail"
   ],
-  "requiredBackgroundModes": [
-    "audio",
-    "location"
-  ],
+
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ffffff",
@@ -40,7 +36,6 @@
       }
     ]
   },
-  "sitemapLocation": "sitemap.json",
-  "http": "util/http.js",
-  "config": "config.js"
+  "sitemapLocation": "sitemap.json"
+
 }

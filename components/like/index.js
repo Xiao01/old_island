@@ -16,8 +16,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    yeslikeImage: 'images/喜欢-拷贝@2x的副本.png',
-    nolikeImage:'images/喜欢@2x.png',
+    yesSrc: 'images/like.png',
+    noSrc: 'images/like@dis.png'
   },
 
   /**

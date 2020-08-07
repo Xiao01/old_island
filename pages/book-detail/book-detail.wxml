@@ -25,7 +25,7 @@
     <text class="shadow" wx:if="{{!comments}}">还没有短评</text>
     <view class="comment-container">
 		<block  wx:key="index" wx:for="{{filter.limit(comments,15)}}">
-			<v-tag tag-class="{{tool.highlight(index)}}" comment="{{item}}" >
+			<v-tag tag-class="{{tool.highlight(index)}}" text="{{item.content}}" >
         <text class="num" slot="after">{{'+'+item.nums}}</text>
       </v-tag>
 		</block>
@@ -73,7 +73,7 @@
   </view>
   <view class="comment-container">
   <block  wx:key="index" wx:for="{{filter.limit(comments,3)}}">
-			<v-tag tag-class="{{tool.highlight(index)}}" comment="{{item}}" bind:tapping="onComment" >
+			<v-tag tag-class="{{tool.highlight(index)}}" text="{{item.content}}" bind:tapping="onComment" >
         <text class="num" slot="after">{{'+'+item.nums}}</text>
       </v-tag>
 		</block>

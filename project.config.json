@@ -6,13 +6,13 @@
 	"setting": {
 		"urlCheck": false,
 		"es6": true,
-		"enhance": false,
+		"enhance": true,
 		"postcss": true,
 		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": false,
 		"coverView": true,
-		"nodeModules": false,
+		"nodeModules": true,
 		"autoAudits": false,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
@@ -65,20 +65,6 @@
 		"miniprogram": {
 			"current": -1,
 			"list": [
-				{
-					"id": 0,
-					"name": "pages/book/book",
-					"pathName": "pages/book/book",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 1,
-					"name": "pages/book-detail/book-detail",
-					"pathName": "pages/book-detail/book-detail",
-					"query": "id=7",
-					"scene": null
-				}
 			]
 		}
 	}

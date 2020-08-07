@@ -6,16 +6,6 @@ Component({
   properties: {
     index:{
       type:Number,
-      //个位数不够，补零 observer
-      // observer:function(newVal,ordVal,changedPath){
-      //   console.log(newVal)
-      //   console.log(ordVal)
-      //   console.log(changedPath)
-      //   let val = newVal < 10 ? '0' + newVal : newVal
-      //   this.setData({
-      //     _index:val
-      //   })
-      // }
     }
   },
 

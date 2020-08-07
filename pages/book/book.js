@@ -20,15 +20,23 @@ Page({
     searching: false,
     hot: [],
     history: [],
+    more:[]
   },
 
   
   onSearch(event) {
     console.log("onSearch" )
-    if (event.detail.input) {
-      console.log("q:" + event.detail.input)
-      wx.navigateTo({
-        url: "/pages/search-result/search-result?q=" + event.detail.input,
+    if (event.detail.q) {
+      let q = event.detail.q
+      console.log("q:" + q)
+   
+      bookModel.search(q).then(res=>{
+        this.setData({
+          more:res.books,
+          loadingCenter:false
+        })
+        console.log(this.data.more)
+        keywordModel.addKeyWordToHistory(q)
       })
     }
     this.setData({
@@ -42,12 +50,13 @@ Page({
     })
 
   },
+  
   onCancel(event) {
+    console.log(" book book.js onCancel ")
     this.setData({
-      searching: event.detail.searching
+      searching: false
     })
   },
-
   /**
    * 生命周期函数--监听页面加载
    */

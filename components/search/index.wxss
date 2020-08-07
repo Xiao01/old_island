@@ -59,6 +59,7 @@
   width: 28rpx;
   height: 28rpx;
   margin-right: 20rpx;
+  z-index: 99;
 }
 
 .history {

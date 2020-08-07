@@ -5,52 +5,74 @@ Component({
   properties: {
     hot: Array,
     history: Array,
+    more: Array,
+    loadingCenter:Boolean,
   },
   /**
    * 组件的初始数据
    */
   data: {
-    input: '',
-    focus: true
+    q: '',
+    searched: false,
+    loading:false,
+    noneResult:false,
   },
-  attached: function () {
-    this.setData({
-      input: "",
-      focus: true
-    })
-  },
+  
 
   /**
    * 组件的方法列表
    */
   methods: {
+    onDelete(event) {
+      this._initialize()
+      this._closeResult()
+    },
     onCancel(event) {
-      this.setData({
-        input: ""
-      })
-      this.triggerEvent("cancel", {
-        searching: false,
-      }, {})
+      this._initialize()
+      this.triggerEvent("cancel", {}, {})
     },
     onConfirm(event) {
-      console.log("onConfirm:" + event.detail.value)
-      const word = event.detail.value
-      if (!word)
+      this._showResult()
+      this._showLoadingCenter()
+      this.setData({
+        q: event.detail.text || event.detail.q,
+      })
+      console.log("onConfirm-this.data.q:" + this.data.q)
+      if (!this.data.q)
         return
       this.triggerEvent("search", {
-        searching: false,
-        input: word
+        q: this.data.q
       }, {})
     },
-    onSearch(event) {
-      console.log("onConfirm:" + event.detail.input)
-      const word = event.detail.input
-      if (!word)
-        return
-      this.triggerEvent("search", {
-        searching: false,
-        input: word
-      }, {})
+    _showLoadingCenter() {
+      this.setData({
+        loadingCenter: true
+      })
     },
+
+
+
+    _showResult() {
+      this.setData({
+        searched: true
+      })
+    },
+
+    _closeResult() {
+      this.setData({
+        searched: false,
+        q: ''
+      })
+    },
+
+    _initialize() {
+      this.setData({
+          books: [],
+          noneResult: false,
+          loading:false
+      })
+      // this.data.total = null
+  },
+
   }
 })
