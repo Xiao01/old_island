@@ -1,0 +1,15 @@
+<view class="containor">
+	
+		<view>
+			<text>本项目开发人员：肖俊俏</text>
+		</view>
+		<view>
+			<text>联系方式：18923739360</text>
+		</view>
+		<view>
+			<text>邮箱：401607178@qq.com</text>
+		</view>
+		<view>
+			<text>源码地址：https://github.com/Xiao01/old_island.git</text>
+		</view>
+</view>

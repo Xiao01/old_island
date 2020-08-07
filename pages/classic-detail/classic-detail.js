@@ -24,18 +24,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
-    
-    classicModel.getLatest().then((res) => {
-      this.setData({
-        classic: res,
-        likeStauts: res.like_status,
-        likeCount: res.fav_nums
+    if( options.cid && options.type){
+      console.log( "options.cid:"+options.cid+ ",&& options.type:" + options.type)
+      classicModel.getById( options.cid, options.type).then(res=>{
+        this.setData({
+          classic: res,
+          likeStauts: res.like_status,
+          likeCount: res.fav_nums
+        })
       })
-      classicModel._setLatestIndex(res.index)
-      let key = classicModel._getKey(res.index)
-      wx.setStorageSync(key, res)
-    })
+    }
   },
 
   onLike: function (event) {

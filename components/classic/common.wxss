@@ -20,4 +20,5 @@
 .content{
   font-size: 36rpx;
   max-width:550rpx;
+  margin-top: 10rpx;
 }

@@ -3,13 +3,14 @@
     "pages/classic/classic",
     "pages/my/my",
     "pages/book/book",
-    "pages/book-detail/book-detail"
+    "pages/book-detail/book-detail",
+    "pages/classic-detail/classic-detail",
+    "pages/about/about"
   ],
-
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTitleText": "旧岛小程序",
+    "navigationBarTitleText": "IVY小程序",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -37,5 +38,4 @@
     ]
   },
   "sitemapLocation": "sitemap.json"
-
 }

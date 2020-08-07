@@ -1,0 +1,11 @@
+.containor{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  
+  height: 1000rpx;
+  font-size: small;
+  color: darkgray;
+  margin-left: 15%;
+}
